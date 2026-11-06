@@ -514,14 +514,14 @@ function screenVMenu(){
   <div class="title">📘 40 個字充電</div><div class="sub">複習卡進度 ${n}/10 張</div>
   <div class="menu">
    <button onclick="startReview('v',${Math.min(n,9)})"><span class="ic">🃏</span><span>① 複習卡<small>先把 10 題的字、語塊、誘答選項看懂(每 5 題有小測)</small></span></button>
-   ${lockBtn(a||b,'','screenChunkPick()','🎧','② 聽語塊選字','聽語塊、選出缺的字(只聽不看)')}
+   ${lockBtn(a||b,'','screenChunkPick()','🎧','② 聽語塊選語塊','聽整個語塊,選出你聽到的那一個')}
    ${lockBtn(a||b,'','startWordQuiz()','👂','③ 聽音選中文','聽單字、選中文(40 字都會出現)')}
    ${lockBtn(all,'','startVGame()','🔋','④ 原題闖關','原卷第 1–10 題,倒數計時、拿分數')}
   </div>`);
 }
 function screenChunkPick(){
   const u=S.unlock,a=vSetDone(0)||u,b=vSetDone(5)||u,all=vDone()||u;
-  render(`<div class="hello"><button class="ghost" onclick="screenVMenu()">‹ 返回</button><span>聽語塊選字</span></div>
+  render(`<div class="hello"><button class="ghost" onclick="screenVMenu()">‹ 返回</button><span>聽語塊選語塊</span></div>
   <div class="title">🎧 選範圍</div><div class="menu">
   ${lockBtn(a,'','startChunkQuiz(0,5)','1️⃣','第 1–5 題','複習完第一組就能玩')}
   ${lockBtn(b,'','startChunkQuiz(5,10)','2️⃣','第 6–10 題','複習完第二組就能玩')}
@@ -696,14 +696,14 @@ function wrapOpts(texts,ansIdx){
 }
 function startChunkQuiz(a,b,fr){
   const items=shuffle(V.slice(a,b)).map(q=>{
-    const w=wrapOpts(q.opts.map(o=>o.w),q.ans);
+    const w=wrapOpts(q.opts.map(o=>q.chunkQ.replace('___',o.w)),q.ans);
     return {
-      prompt:'<div class="inst">🎧 只聽、不看字:聽到的語塊中,「blank」是缺的字</div><div style="text-align:center"><button class="spk huge" onclick="replay()">🔊</button></div>',
+      prompt:'<div class="inst">🎧 聽聽看,你聽到的是哪一個語塊?</div><div style="text-align:center"><button class="spk huge" onclick="replay()">🔊</button></div>',
       opts:w.opts,ans:w.ans,autoplay:true,extra:6,
-      speak:()=>sayNow(q.chunkQ),
-      hintLabel:'看字幕',hintHtml:`${q.chunkQ.replace(/___/g,'<span class="blank">&nbsp;&nbsp;&nbsp;</span>')}<br><span style="color:#475569">${q.chunkZh}</span>`,
+      speak:()=>sayNow(q.chunkAns),
+      hintLabel:'看中文',hintHtml:`<b>${q.chunkZh}</b>`,
       onResult:(ok)=>{const wd=W(q.q,q.ans);ok?wd.lc++:wd.wrong++;},
-      explain:ok=>`<div>✅ 完整語塊:<b>${q.chunkAns}</b>(${q.chunkZh})</div>${q.syn?`<div style="color:#475569">原句用 <b>${q.syn}</b>,意思和 <b>${q.opts[q.ans].w}</b> 一樣。</div>`:''}`,
+      explain:ok=>`<div>✅ 正確語塊:<b>${q.chunkAns}</b>(${q.chunkZh})</div>${q.syn?`<div style="color:#475569">原句用 <b>${q.syn}</b>,意思和 <b>${q.opts[q.ans].w}</b> 一樣。</div>`:''}`,
       after:()=>sayNow(q.chunkAns)
     };
   });
