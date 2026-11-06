@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>⚡ 統測充電站|115 字彙・對話</title>
+<style>*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",sans-serif;font-size:18px;line-height:1.6;color:#0f172a;background:linear-gradient(180deg,#0b2447 0%,#19376d 55%,#0b2447 100%);min-height:100vh;background-attachment:fixed}
+#wrap{max-width:520px;margin:0 auto;padding:14px 14px 40px}
+h1,h2,h3{margin:0}
+button{font:inherit;cursor:pointer;border:0;border-radius:16px;padding:14px 18px;min-height:52px;color:#0f172a;background:#fff;box-shadow:0 3px 0 rgba(0,0,0,.18);transition:transform .08s}
+button:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.btn{background:#ffd23f;font-weight:800;font-size:20px}
+.btn.cyan{background:#22d3ee}
+.btn.green{background:#4ade80}
+.btn.block{display:block;width:100%}
+.ghost{background:rgba(255,255,255,.14);color:#fff;box-shadow:none;min-height:44px;padding:8px 14px;font-size:16px}
+.card{background:#fff;border-radius:22px;padding:18px;margin:12px 0;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.card.soft{background:#f8fafc}
+.title{color:#fff;text-align:center;margin:8px 0 4px;font-size:26px;font-weight:900;letter-spacing:1px}
+.sub{color:#cfe3ff;text-align:center;font-size:16px;margin-bottom:8px}
+.bolt{color:#ffd23f}
+label{display:block;font-weight:700;margin:12px 0 4px}
+input,select{width:100%;font:inherit;font-size:20px;padding:12px 14px;border-radius:14px;border:3px solid #cbd5e1;background:#fff}
+input:focus,select:focus{outline:none;border-color:#22d3ee}
+.warn{background:#fff3cd;border-left:6px solid #f59e0b;padding:10px 12px;border-radius:12px;font-size:16px;margin:10px 0}
+.row{display:flex;gap:10px}
+.row>*{flex:1}
+.hello{color:#fff;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.hello b{color:#ffd23f}
+.badge{display:inline-block;background:#ffd23f;color:#0b2447;border-radius:999px;padding:2px 14px;font-weight:900}
+.stat{display:flex;gap:8px;margin:10px 0}
+.stat div{flex:1;background:rgba(255,255,255,.12);color:#fff;border-radius:16px;padding:8px 6px;text-align:center;font-size:14px}
+.stat b{display:block;font-size:22px;color:#ffd23f}
+.menu button{display:flex;align-items:center;gap:14px;width:100%;text-align:left;margin:10px 0;padding:16px;font-size:20px;font-weight:800}
+.menu button small{display:block;font-weight:500;font-size:14px;color:#475569}
+.menu .ic{font-size:34px}
+.lock{opacity:.5}
+.qhead{display:flex;justify-content:space-between;align-items:center;color:#fff;font-weight:800;gap:8px}
+.score{background:#ffd23f;color:#0b2447;border-radius:999px;padding:2px 14px}
+.streak{min-height:30px;text-align:center;color:#ffd23f;font-weight:900;font-size:18px}
+.battery{position:relative;height:30px;background:#e2e8f0;border:4px solid #fff;border-radius:10px;margin:4px 14px 12px 0}
+.battery:after{content:"";position:absolute;right:-12px;top:5px;width:8px;height:12px;background:#fff;border-radius:0 4px 4px 0}
+.battery i{display:block;height:100%;width:100%;background:#4ade80;border-radius:4px;transition:width .1s linear,background .3s}
+.battery i.mid{background:#facc15}
+.battery i.low{background:#fb923c}
+.qbox{background:#fff;border-radius:20px;padding:16px;font-size:21px;line-height:1.7}
+.qbox .inst{font-size:15px;color:#475569;margin-bottom:6px;font-weight:700}
+.blank{display:inline-block;min-width:90px;border-bottom:4px solid #0ea5e9;margin:0 4px;text-align:center}
+.fill{background:#bbf7d0;border-radius:8px;padding:0 6px}
+u{text-decoration:none;border-bottom:4px solid #f43f5e;font-weight:800}
+.tools{display:flex;gap:10px;margin:10px 0}
+.tools button{flex:1;font-size:16px;min-height:46px;padding:8px}
+.opts{display:grid;gap:10px;margin:10px 0}
+.opt{display:flex;gap:12px;align-items:center;text-align:left;font-size:21px;font-weight:700;padding:14px 16px;border:3px solid #cbd5e1;min-height:62px}
+.opt .L{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#0b2447;color:#fff;font-size:16px;flex:none}
+.opt small{display:block;font-weight:500;font-size:14px;color:#64748b}
+.opt.ok{background:#bbf7d0;border-color:#16a34a;animation:pop .35s}
+.opt.no{background:#fecaca;border-color:#ef4444;animation:shake .3s}
+.fb{border-radius:20px;padding:14px;margin:10px 0;background:#fff;font-size:17px}
+.fb .head{font-weight:900;font-size:22px;margin-bottom:4px}
+.fb .good{color:#15803d}.fb .bad{color:#b91c1c}
+.fb ul{padding-left:20px;margin:6px 0}
+.hintbox{background:#e0f2fe;border-radius:14px;padding:10px 12px;margin:8px 0;font-size:17px}
+.big{font-size:40px;font-weight:900;color:#0b2447;line-height:1.2}
+.pos{color:#475569;font-size:18px}
+.spk{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#22d3ee;font-size:26px;padding:0;min-height:0;flex:none}
+.spk.huge{width:96px;height:96px;font-size:44px}
+.chunk{background:#fef9c3;border-radius:14px;padding:10px 12px;margin:10px 0;font-size:20px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.chips span{display:inline-block;background:#e2e8f0;border-radius:999px;padding:2px 12px;margin:2px;font-size:15px}
+.hook{background:#ede9fe;border-radius:14px;padding:10px 12px;margin:10px 0;font-size:17px}
+.flip{width:100%;text-align:left;margin:6px 0;background:#f1f5f9;border:3px dashed #94a3b8;font-size:18px;box-shadow:none}
+.flip.open{background:#fff;border:3px solid #cbd5e1}
+.flip .w{font-weight:900;font-size:22px}
+.gate{font-size:15px;color:#b45309;text-align:center;min-height:24px;margin:6px 0}
+.bub{max-width:88%;padding:10px 14px;border-radius:18px;margin:8px 0;font-size:19px;position:relative}
+.bub .who{font-size:13px;font-weight:800;color:#64748b;display:block}
+.bub.L{background:#e2e8f0;border-bottom-left-radius:4px;margin-right:auto}
+.bub.R{background:#bae6fd;border-bottom-right-radius:4px;margin-left:auto}
+.bub.clue{outline:4px solid #facc15}
+.bub .zh{display:none;font-size:15px;color:#334155;border-top:1px dashed #94a3b8;margin-top:4px;padding-top:4px}
+.bub.show .zh{display:block}
+.bub.blur .t{filter:blur(7px);user-select:none}
+.bub.empty{background:#fff;border:3px dashed #0ea5e9}
+.leg{display:flex;gap:6px;flex-wrap:wrap;font-size:13px;margin:6px 0}
+.leg span,.chip{display:inline-block;border-radius:8px;padding:1px 8px}
+.lv0{background:#e2e8f0;color:#64748b}.lv1{background:#fde68a}.lv2{background:#bbf7d0}.lv3{background:#4ade80;font-weight:800}
+.grid{display:grid;grid-template-columns:34px repeat(4,1fr);gap:4px;margin:4px 0;font-size:14px;align-items:center}
+.grid .chip{text-align:center;padding:3px 1px;font-size:11.5px;letter-spacing:-.2px;white-space:nowrap;overflow:visible}
+.grid.d{grid-template-columns:repeat(5,1fr)}
+.rep{background:#fff;border-radius:18px;padding:14px;border:4px solid #ffd23f}
+.rep h2{text-align:center;font-size:22px}
+.rep table{width:100%;border-collapse:collapse;font-size:16px}
+.rep td{padding:3px 4px;border-bottom:1px solid #e2e8f0}
+.rep td:last-child{text-align:right;font-weight:800}
+.sum{text-align:center}
+.sum .num{font-size:56px;font-weight:900;color:#0b2447}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b2447;color:#fff;padding:10px 18px;border-radius:999px;z-index:9;font-size:16px}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+</style></head>
+<body><div id="wrap"><div id="app"></div></div>
+<script>/* ===== 115 統測英文 第1–20題 題庫(原卷文字,答案依公告參考答案) ===== */
+const V = [
+{q:1, en:"These clothes are still ___, so you need to hang them in the sun to remove the water.",
+ zh:"這些衣服還是潮濕的,所以你需要把它們晾在陽光下以去除水分。", syn:null,
+ chunkQ:"clothes are still ___", chunkAns:"clothes are still wet", chunkZh:"衣服還是濕的",
+ clue:"hang them in the sun / remove the water",
+ hook:"wet ↔ dry 是一對反義字。題目說要「晾乾、去除水分」,表示衣服現在還是 wet。",
+ opts:[
+  {w:"bare",pos:"adj.",zh:"赤裸的、光禿禿的",why:"bare 是「沒有遮蓋」,例如 bare feet(赤腳),跟有沒有水無關。"},
+  {w:"dry",pos:"adj.",zh:"乾燥的",why:"如果已經 dry 就不用再晾,和 still(還是)、remove the water 矛盾。"},
+  {w:"thin",pos:"adj.",zh:"薄的、瘦的",why:"thin 說的是厚薄,不是濕或乾。"},
+  {w:"wet",pos:"adj.",zh:"潮濕的",why:"✔ 還有水,所以要晾在太陽下。"}],
+ ans:3},
+{q:2, en:"Wang Guan-hong (王冠閎), Taiwan's \"Butterfly King,\" began his swimming journey in the third grade when he ___ the school's swimming team.",
+ zh:"台灣的「蝶王」王冠閎在三年級時加入學校游泳隊,開始了他的游泳生涯。", syn:null,
+ chunkQ:"___ the school's swimming team", chunkAns:"joined the school's swimming team", chunkZh:"加入學校游泳隊",
+ clue:"school's swimming team / began his swimming journey",
+ hook:"join 有「連在一起」的意思。電子科的 joint(接頭)、焊接點也是同一個字根:人連進團體,就是加入。常搭配 join a team / a club / a class。",
+ opts:[
+  {w:"blocked",pos:"v.",zh:"阻擋",why:"block 是擋住,不會 block a team 來開始游泳生涯。"},
+  {w:"joined",pos:"v.",zh:"加入",why:"✔ join the team = 加入球隊/校隊。"},
+  {w:"pulled",pos:"v.",zh:"拉",why:"pull 是拉東西,不能 pull a team。"},
+  {w:"rented",pos:"v.",zh:"租用",why:"rent 是租東西(租房子、租車),不能租一支校隊。"}],
+ ans:1},
+{q:3, en:"The teacher treats all her students ___, giving every student the same opportunity to succeed.",
+ zh:"這位老師平等地對待她所有的學生,給予每個學生相同的成功機會。", syn:null,
+ chunkQ:"treats all her students ___", chunkAns:"treats all her students equally", chunkZh:"平等地對待所有學生",
+ clue:"the same opportunity",
+ hook:"equal 就是數學的等號「=」,電子科天天看到。equal + ly = 相等地 → 平等地。",
+ opts:[
+  {w:"carelessly",pos:"adv.",zh:"粗心地",why:"粗心對待,和後面「給每個人相同機會」意思相反。"},
+  {w:"equally",pos:"adv.",zh:"平等地",why:"✔ treat 人 equally = 平等地對待,對應 the same opportunity。"},
+  {w:"instantly",pos:"adv.",zh:"立即地",why:"instantly 說的是速度,和「相同機會」無關。"},
+  {w:"silently",pos:"adv.",zh:"安靜地",why:"silently 說的是沒有聲音,和題意無關。"}],
+ ans:1},
+{q:4, en:"With a calm, beautiful beach just within walking distance, this hotel is a ___ place to relax.",
+ zh:"飯店距離寧靜美麗的海灘僅需步行即可抵達,是一個適合放鬆的地方。", syn:null,
+ chunkQ:"a ___ place to relax", chunkAns:"a suitable place to relax", chunkZh:"適合放鬆的地方",
+ clue:"calm, beautiful beach / relax",
+ hook:"suit(西裝)+ able(能夠):像西裝一樣剛好合身 → 合適的。常見用法:suitable for ...、a suitable place to ...。",
+ opts:[
+  {w:"difficult",pos:"adj.",zh:"困難的",why:"difficult 的地方不會讓人放鬆。"},
+  {w:"fearful",pos:"adj.",zh:"害怕的",why:"fearful 通常形容「人感到害怕」,不能形容飯店;也不是放鬆。"},
+  {w:"rocky",pos:"adj.",zh:"多岩石的",why:"題目說海灘 calm、beautiful,rocky 與題意不合。"},
+  {w:"suitable",pos:"adj.",zh:"適合的",why:"✔ a suitable place to relax = 適合放鬆的地方。"}],
+ ans:3},
+{q:5, en:"In order to ___ more customers, the bakery café offers a 20% discount on each cup of coffee for three days.",
+ zh:"為了吸引更多顧客,這家麵包咖啡店提供每杯咖啡 20%的折扣,為期三天。", syn:null,
+ chunkQ:"to ___ more customers", chunkAns:"to attract more customers", chunkZh:"吸引更多顧客",
+ clue:"20% discount / more customers",
+ hook:"at(朝向)+ tract(拉):把人拉過來。tractor(拖拉機)也是 tract = 拉。attractive = 有吸引力的。",
+ opts:[
+  {w:"attract",pos:"v.",zh:"吸引",why:"✔ 打折的目的是 attract more customers。"},
+  {w:"blame",pos:"v.",zh:"責備",why:"責備顧客只會把人趕走,和打折的目的相反。"},
+  {w:"excuse",pos:"v./n.",zh:"原諒;藉口",why:"excuse 是原諒或藉口,和「更多顧客」搭不起來。"},
+  {w:"prevent",pos:"v.",zh:"防止、阻止",why:"打折是要吸引客人,不是 prevent(阻止)客人。"}],
+ ans:0},
+{q:6, en:"Weather forecasts for one or two days ahead are quite ___, providing correct weather information most of the time.",
+ zh:"一兩天前的天氣預報是相當準確的,大部分時間都能提供正確的天氣資訊。", syn:null,
+ chunkQ:"Weather forecasts are quite ___", chunkAns:"Weather forecasts are quite accurate", chunkZh:"天氣預報相當準確",
+ clue:"providing correct weather information",
+ hook:"ac(去)+ cur(用心)+ ate:用心做出來的才準確。電子科常用 accurate measurement(精準的量測)。",
+ opts:[
+  {w:"accurate",pos:"adj.",zh:"準確的",why:"✔ 後面說「提供正確的資訊」,所以預報很 accurate。"},
+  {w:"doubtful",pos:"adj.",zh:"令人懷疑的",why:"doubtful 表示不可靠,與 correct information 矛盾。"},
+  {w:"false",pos:"adj.",zh:"錯誤的、假的",why:"false 是錯的,與「大部分時間都正確」矛盾。"},
+  {w:"inferior",pos:"adj.",zh:"較差的",why:"inferior 是品質較差,跟「提供正確資訊」不合。"}],
+ ans:0},
+{q:7, en:"Amy was certain that she had a high fever after measuring her body ___.",
+ zh:"Amy 在測量體溫後,確定自己發高燒了。", syn:null,
+ chunkQ:"measuring her body ___", chunkAns:"measuring her body temperature", chunkZh:"測量體溫",
+ clue:"high fever / measuring",
+ hook:"temper(調和、調節)+ ature。body temperature = 體溫,room temperature = 室溫。電子科:temperature sensor = 溫度感測器。",
+ opts:[
+  {w:"existence",pos:"n.",zh:"存在",why:"existence 是「存在」,不是能測量的身體數值。"},
+  {w:"image",pos:"n.",zh:"影像、形象",why:"image 是影像或形象,不能用來判斷發燒。"},
+  {w:"structure",pos:"n.",zh:"結構",why:"structure 是結構,和發燒無關。"},
+  {w:"temperature",pos:"n.",zh:"溫度",why:"✔ measure body temperature = 量體溫,才能確定發燒。"}],
+ ans:3},
+{q:8, en:"When the award presenter ___ Shu Qi (舒淇) as the winner of the Best Director Award at the 30th Busan International Film Festival (釜山影展), the audience stood up and clapped their hands.",
+ zh:"當頒獎人舒淇宣布第 30 屆釜山影展最佳導演獎得主時,觀眾都站起來鼓掌。", syn:null,
+ chunkQ:"___ Shu Qi as the winner", chunkAns:"announced Shu Qi as the winner", chunkZh:"宣布舒淇是得獎者",
+ clue:"winner / the audience clapped",
+ hook:"an(向)+ nounce(報告):向大家報告 = 宣布。pronounce(發音)、announcer(播報員)是同一個字根。",
+ opts:[
+  {w:"announced",pos:"v.",zh:"宣布",why:"✔ announce 人 as the winner = 宣布某人是得獎者。"},
+  {w:"circulated",pos:"v.",zh:"流傳;循環",why:"circulate 是流通、循環(血液循環),不是宣布得獎。"},
+  {w:"inspected",pos:"v.",zh:"檢查",why:"inspect 是檢查東西,不會 inspect 某人 as the winner。"},
+  {w:"preserved",pos:"v.",zh:"保存",why:"preserve 是保存(食物、古蹟),和頒獎無關。"}],
+ ans:0},
+{q:9, en:"When buying a car, those who want to save money will pick a used one because it is a more affordable <u>option</u>.",
+ zh:"買車時,想省錢的人會選擇二手車,因為那是一個更負擔得起的選擇。", syn:"option",
+ chunkQ:"a more affordable ___", chunkAns:"a more affordable choice", chunkZh:"更負擔得起的選擇",
+ clue:"save money / used one",
+ hook:"option = choice。手機設定裡的「選項」就是 Options。an affordable option = 負擔得起的選擇。",
+ opts:[
+  {w:"choice",pos:"n.",zh:"選擇",why:"✔ option 和 choice 都是「選擇、選項」。"},
+  {w:"material",pos:"n.",zh:"材料",why:"material 是材料(布料、原料),不是選擇。"},
+  {w:"quantity",pos:"n.",zh:"數量",why:"quantity 是數量,和「一種選擇」不同。"},
+  {w:"sample",pos:"n.",zh:"樣本、試用品",why:"sample 是樣品或樣本,不是「可以選的一個方案」。"}],
+ ans:0},
+{q:10, en:"Tim was <u>extremely</u> moved by the eight-part polyphony (八部合音) of the Bunun people (布農族), and he dreamed of singing with them on stage one day.",
+ zh:"Tim 對布農族的八部合音感到極度感動,夢想有一天能和他們一起在舞台上演唱。", syn:"extremely",
+ chunkQ:"___ moved by the eight-part polyphony", chunkAns:"deeply moved by the eight-part polyphony", chunkZh:"深深被八部合音感動",
+ clue:"moved / dreamed of singing with them",
+ hook:"extremely = 非常非常。deeply = deep(深)+ ly = 深深地。deeply moved = 深深感動,是很常見的搭配。",
+ opts:[
+  {w:"angrily",pos:"adv.",zh:"生氣地",why:"angrily 是生氣地,而 Tim 是被感動,情緒相反。"},
+  {w:"bravely",pos:"adv.",zh:"勇敢地",why:"bravely 是勇敢地,不能形容「感動的程度」。"},
+  {w:"deeply",pos:"adv.",zh:"深深地",why:"✔ extremely moved ≈ deeply moved,都是「非常感動」。"},
+  {w:"openly",pos:"adv.",zh:"公開地",why:"openly 是公開地,不是表示程度。"}],
+ ans:2}
+];
+
+const D = [
+{q:11, lines:[
+ {s:"Customer",en:"Hi, do you sell phone chargers?",zh:"嗨,你們有賣手機充電器嗎?"},
+ {s:"Clerk",en:"Yes, over there. Take a look, please.",zh:"有的,就在那邊。請看一下。"},
+ {s:"Customer",en:"Great, I'll take this one. How much is it?",zh:"太好了,我要買這一個。多少錢?"},
+ {s:"Clerk",en:"That'll be NT$ 350. ___",zh:"總共是 350 元。___"},
+ {s:"Customer",en:"No, just the charger.",zh:"不用了,只要充電器就好。"},
+ {s:"Clerk",en:"OK, got it.",zh:"好的,沒問題。"}],
+ opts:[{en:"Is that all?",zh:"就這樣嗎?",why:"回答 Is that all? 通常是 Yes / That's all,不會說 No。"},
+  {en:"Anything else?",zh:"還需要別的嗎?",why:"✔ 客人說 No, just the charger,就是在回答「還要別的嗎?」。"},
+  {en:"Cash or credit card?",zh:"付現還是刷卡?",why:"問付款方式,客人要回答 Cash 或 Card,不是 just the charger。"},
+  {en:"It works well, right?",zh:"它很好用,對吧?",why:"問好不好用,客人不會回答 No, just the charger。"}],
+ ans:1, clue:4,
+ explain:"客人說「不用了,只要充電器就好」,是在拒絕額外的東西,所以店員問的是 Anything else?。Is that all? 的答案會是 Yes。"},
+{q:12, lines:[
+ {s:"Jane",en:"Did you go to the BLACKPINK concert?",zh:"你有去 BLACKPINK 的演唱會嗎?"},
+ {s:"Tom",en:"Nope. I was busy preparing for a singing competition.",zh:"沒有。我忙著準備歌唱比賽。"},
+ {s:"Jane",en:"Oh! And did you go to the TWICE concert?",zh:"喔!那你有去 TWICE 的演唱會嗎?"},
+ {s:"Tom",en:"___",zh:"___"},
+ {s:"Jane",en:"Lucky you! You got the tickets! I wish I were there with you.",zh:"你真幸運!你有買到票!我真希望當時我也在那裡。"}],
+ opts:[{en:"They'll never come again.",zh:"她們再也不會來了",why:"沒有回答「有沒有去」,也接不上「你買到票」。(只在這題有意義)"},
+  {en:"I went with my classmates.",zh:"我跟同學一起去了",why:"✔ Jane 說 Lucky you! You got the tickets!,表示 Tom 有去。"},
+  {en:"I'm not a fan of these two groups.",zh:"我不是這兩團的粉絲",why:"不是粉絲就不會去,和 Lucky you 矛盾。"},
+  {en:"You sang very well with me last time.",zh:"你上次跟我唱得很好",why:"答非所問,Jane 問的是演唱會。"}],
+ ans:1, clue:4,
+ explain:"Jane 說「你真幸運!你有買到票」,可以知道 Tom 去了 TWICE 的演唱會,而且是和同學一起去。"},
+{q:13, lines:[
+ {s:"Liz",en:"I'm going to the supermarket to pick up two boxes of mandarin oranges. My mother ordered them for Chinese New Year.",zh:"我要去超市拿兩箱橘子。我媽為了過年訂的。"},
+ {s:"Jay",en:"___",zh:"___"},
+ {s:"Liz",en:"They are a symbol of good fortune. We eat them to bring good luck.",zh:"它們是吉祥的象徵。我們吃橘子來帶來好運。"}],
+ opts:[{en:"Since when?",zh:"從何時開始?",why:"Liz 的回答沒有提到時間。"},
+  {en:"Which supermarket?",zh:"哪間超市?",why:"Liz 的回答沒有提到店名。"},
+  {en:"Why mandarin oranges?",zh:"為什麼是橘子?",why:"✔ Liz 回答「它們是吉祥的象徵」,就是在說明原因。"},
+  {en:"How many mandarin oranges?",zh:"多少橘子?",why:"前面已經說了兩箱,而且回答沒有提到數量。"}],
+ ans:2, clue:2,
+ explain:"Liz 後面說橘子是吉祥的象徵、吃了帶來好運,這是在解釋原因,所以 Jay 問的是 Why mandarin oranges?。"},
+{q:14, lines:[
+ {s:"Brian",en:"I heard you're learning Spanish. Is it hard?",zh:"我聽說你在學西班牙文。很難嗎?"},
+ {s:"Lily",en:"Yes, it is, but I like it.",zh:"是很難,但我很喜歡。"},
+ {s:"Brian",en:"You're already 30. ___",zh:"你都 30 歲了。___"},
+ {s:"Lily",en:"No, not at all. Age is not a big deal.",zh:"不,一點也不。年齡不是問題。"}],
+ opts:[{en:"How would you deal with it anyway?",zh:"你打算怎麼處理?",why:"Lily 回答的是年齡不是問題,不是在說處理方法。"},
+  {en:"Isn't Spanish your favorite language?",zh:"西語不是你最愛的語言嗎?",why:"和「30 歲」沒有關係,Lily 也沒有談喜好。"},
+  {en:"When did you start learning Spanish?",zh:"你何時開始學西語的?",why:"Lily 回答的不是時間。"},
+  {en:"Isn't it too late to learn a new language?",zh:"現在學新語言難道不會太晚嗎?",why:"✔ Lily 回答 No, not at all. Age is not a big deal.,正是回答「會不會太晚」。"}],
+ ans:3, clue:3,
+ explain:"Brian 先說「你都 30 歲了」,暗示年紀,Lily 回答「不,一點也不,年齡不是問題」,所以他問的是會不會太晚。"},
+{q:15, lines:[
+ {s:"Peter",en:"Gosh. I left my bottled water on my bike.",zh:"天哪。我把瓶裝水忘在腳踏車上了。"},
+ {s:"Rose",en:"For the whole afternoon? Then don't drink it. It's hot outside. The sun may have heated it up.",zh:"忘了一整個下午嗎?那別喝了。外面很熱,太陽可能把它加熱了。"},
+ {s:"Peter",en:"___",zh:"___"},
+ {s:"Rose",en:"Chemicals from plastics may have got into the water. It's not good for your health.",zh:"塑膠裡的化學物質可能已經滲入水中了。這對你的健康不好。"},
+ {s:"Peter",en:"I didn't know that!",zh:"我以前都不知道!"}],
+ opts:[{en:"What's wrong with that?",zh:"那有什麼問題嗎?",why:"✔ Rose 接著解釋哪裡有問題:塑膠的化學物質對健康不好。"},
+  {en:"Where did I leave my bike?",zh:"我把車停哪了?",why:"前面已經說在哪裡,Rose 也沒有回答地點。"},
+  {en:"When's the sun going down?",zh:"太陽何時下山?",why:"Rose 沒有回答時間。"},
+  {en:"Why did you bring that with you?",zh:"你為什麼帶那個?",why:"問的是 Rose,但後面是 Rose 在解釋水的問題。"}],
+ ans:0, clue:3,
+ explain:"Rose 說不要喝,Peter 不懂為什麼,所以問「那有什麼問題嗎?」。Rose 才接著解釋塑膠裡的化學物質對健康不好。"},
+{q:16, lines:[
+ {s:"Mrs. Wu",en:"I'm going shopping. Would you mind picking up Jimmy at the sports center?",zh:"我要去購物。你介意去運動中心接 Jimmy 嗎?"},
+ {s:"Mr. Wu",en:"I'd like to, but I'll have an online meeting soon.",zh:"我想去,但我等一下有線上會議。"},
+ {s:"Mrs. Wu",en:"We're out of food for dinner. There's nothing left in the fridge.",zh:"我們沒東西煮晚餐了。冰箱裡什麼都不剩。"},
+ {s:"Mr. Wu",en:"___",zh:"___"},
+ {s:"Mrs. Wu",en:"Great! You go book the restaurant now and I'll get Jimmy.",zh:"太棒了!那你現在去訂餐廳,我去接 Jimmy。"}],
+ opts:[{en:"Are you interested in sports?",zh:"你對運動有興趣嗎?",why:"和晚餐、訂餐廳無關。"},
+  {en:"Can I go shopping right now?",zh:"我現在能去購物嗎?",why:"Mrs. Wu 自己要去購物,而且後面說的是訂餐廳。"},
+  {en:"Then we can eat out tonight.",zh:"那我們今晚去外面吃吧。",why:"✔ Mrs. Wu 說「你去訂餐廳」,表示今晚外食。"},
+  {en:"Let's do online meeting together.",zh:"讓我們一起參加線上會議。",why:"Mr. Wu 的會議是他自己的事,後面沒有接續這件事。"}],
+ ans:2, clue:4,
+ explain:"家裡沒食物,Mr. Wu 提議外食,Mrs. Wu 才說「太棒了!你去訂餐廳,我去接 Jimmy」。"},
+{q:17, lines:[
+ {s:"Ming",en:"Did you know the skills contest in Taipei last year?",zh:"你知道去年在台北舉行的技能競賽嗎?"},
+ {s:"A-Mei",en:"The Asian Skills Competition at Nangang Exhibition Center?",zh:"在南港展覽館舉辦的亞洲技能競賽嗎?"},
+ {s:"Ming",en:"Yes. I was there. It was very impressive. The Taiwan team did a good job!",zh:"對。我當時在場。非常令人印象深刻。台灣隊表現得很棒!"},
+ {s:"A-Mei",en:"___",zh:"___"},
+ {s:"Ming",en:"Twenty-two in total. We won the team title; we were the best in Asia!",zh:"總共拿了 22 面。我們贏得了團體冠軍;我們是亞洲最強的!"}],
+ opts:[{en:"Did we get any gold medals?",zh:"我們有拿到金牌嗎?",why:"✔ Ming 回答 Twenty-two in total,指金牌總共 22 面。"},
+  {en:"Did you go there by the Blue 22 bus?",zh:"你搭藍 22 公車去嗎?",why:"這是拿數字 22 當陷阱,Ming 說的是獎牌數。(只在這題有意義)"},
+  {en:"Did you know anything about Car Painting?",zh:"你知道任何關於汽車噴漆的事嗎?",why:"Ming 沒有回答跟汽車噴漆有關的內容。"},
+  {en:"Did we also enter the competition two years ago?",zh:"我們兩年前也有參賽嗎?",why:"Ming 回答的是數量 22,不是有沒有參賽。"}],
+ ans:0, clue:4,
+ explain:"Ming 說「總共 22 面,我們贏得團體冠軍」,是在回答獎牌數,所以 A-Mei 問的是我們有沒有拿到金牌。"},
+{q:18, lines:[
+ {s:"Ann",en:"Hey, I'm writing my resume. What should I put first?",zh:"嘿,我在寫履歷。我應該先放什麼?"},
+ {s:"Ben",en:"You can list your education first.",zh:"你可以先列出你的學歷。"},
+ {s:"Ann",en:"What's next? ___",zh:"接下來呢?___"},
+ {s:"Ben",en:"Yes. My advice is that you list your past jobs going backwards in time, from your last job to your first job.",zh:"是的。我的建議是,你按時間倒序排列過去的工作,從最近的一份寫到第一份。"}],
+ opts:[{en:"Your job plan?",zh:"你的工作計畫?",why:"Ben 說的是「過去的工作」,不是計畫。"},
+  {en:"My work experience?",zh:"我的工作經驗?",why:"✔ Ben 回答 Yes,並教她列出過去的工作。"},
+  {en:"When to start working?",zh:"何時開始工作?",why:"Ben 沒有談時間點。"},
+  {en:"Why applying for this job?",zh:"為何應徵這份工作?",why:"Ben 沒有談應徵原因。"}],
+ ans:1, clue:3,
+ explain:"Ben 回答 Yes,接著說要把過去的工作倒序列出來,可知 Ann 問的是「我的工作經驗?」。"},
+{q:19, lines:[
+ {s:"Dave",en:"Grandma, you need to renew your driver's license if you want to keep driving.",zh:"阿嬤,如果你想繼續開車,你需要去換發駕照。"},
+ {s:"Grandma",en:"But I'm just 71. I thought only people over 75 had to do it.",zh:"但我才 71 歲。我以為 75 歲以上的人才需要換。"},
+ {s:"Dave",en:"Not anymore. The new rules say people have to renew their licenses at 70 now.",zh:"現在不一樣了。新規定說現在 70 歲就要換駕照了。"},
+ {s:"Grandma",en:"That won't be a problem. I'm very healthy. ___",zh:"那沒問題。我很健康。___"},
+ {s:"Dave",en:"I totally agree, Grandma. I believe I'll still get rides from you.",zh:"我完全同意,阿嬤。我相信我以後還是會搭你開的車。"}],
+ opts:[{en:"Maybe I should sell my car right now.",zh:"也許我現在該賣車。",why:"Dave 說還會搭她的車,表示她不會賣車。"},
+  {en:"Maybe it's time for me to stop driving.",zh:"也許是我該停止開車的時候了。",why:"和 Dave 說「還會搭你開的車」矛盾。"},
+  {en:"I'm sure I can get my license renewed.",zh:"我相信我能換到駕照。",why:"✔ 阿嬤很健康,所以有信心通過換照,之後也能繼續開車。"},
+  {en:"I'll wait until I turn 70 to renew my license.",zh:"我會等到 70 歲再換。",why:"阿嬤已經 71 歲,早就超過 70 歲了,邏輯不通。"}],
+ ans:2, clue:4,
+ explain:"阿嬤說自己很健康,再說她有信心換到駕照,Dave 才會同意並說以後還會搭她的車。"},
+{q:20, lines:[
+ {s:"Willy",en:"Did you hear that Dr. Jane Goodall (珍古德博士) passed away last year?",zh:"你聽說珍古德博士去年過世了嗎?"},
+ {s:"Joan",en:"It's so sad. She spent her whole life studying chimpanzees in Africa.",zh:"真令人難過。她一生致力於在非洲研究黑猩猩。"},
+ {s:"Willy",en:"Yes. ___ So now we know better how chimpanzees behave in the wild.",zh:"是的。___所以現在我們更了解黑猩猩在野外的行為。"}],
+ opts:[{en:"She put a lot of effort into protecting the oceans.",zh:"她投入很多努力保護海洋。",why:"前面說她研究黑猩猩,和海洋無關。"},
+  {en:"She really helped people understand these animals.",zh:"她真的幫助人們理解這些動物。",why:"✔ 對應後面 So now we know better how chimpanzees behave。"},
+  {en:"She gave so much love to the poor children in Africa.",zh:"她給非洲貧童很多愛。",why:"對話沒有談到兒童。"},
+  {en:"She truly encouraged people to take care of stray cats.",zh:"她真的鼓勵人們照顧流浪貓。",why:"珍古德研究的是黑猩猩,不是貓。"}],
+ ans:1, clue:2,
+ explain:"後面接 So now we know better how chimpanzees behave(所以我們更了解黑猩猩),因果是「她幫助人們理解這些動物」。"}
+];
+</script>
+<script>/* ===== 狀態與儲存 ===== */
+const KEY = 'e115v1:';
+const S = {p:null, d:null, unlock:false, act:'idle', sess:{score:0, rev:0, play:0, v:0, dl:0}, last:Date.now()};
+let tc = 0, timers = [];
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const plain = s => String(s).replace(/<[^>]+>/g,'').replace(/_{2,}/g,' blank ');
+const pad = n => String(n).padStart(2,'0');
+function today(){const d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());}
+function fmtT(s){s=Math.round(s);return Math.floor(s/60)+' 分 '+pad(s%60)+' 秒';}
+function nowStr(){const d=new Date();return d.getFullYear()+'/'+pad(d.getMonth()+1)+'/'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());}
+function pkey(){return KEY+[S.p.cls,S.p.seat,S.p.name].join('|');}
+function save(){try{localStorage.setItem(pkey(),JSON.stringify(S.d));}catch(e){}}
+function newData(){return {words:{},dl:{},rev:{v:{},d:{}},days:{},total:{score:0,rounds:0},set:{limit:30},made:Date.now()};}
+function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+function clearTimers(){timers.forEach(t=>clearInterval(t));timers=[];}
+function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2200);}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function render(html){clearTimers();$('#app').innerHTML=html;window.scrollTo(0,0);}
+
+/* 計算練習時間:只在頁面可見、且 90 秒內有操作時才累計 */
+['click','touchstart','keydown'].forEach(e=>document.addEventListener(e,()=>{S.last=Date.now();},{passive:true}));
+setInterval(()=>{
+  if(!S.d||document.visibilityState!=='visible'||Date.now()-S.last>90000)return;
+  if(S.act==='rev'||S.act==='play'){
+    S.sess[S.act]++;
+    const k=today();const dd=S.d.days[k]||(S.d.days[k]={rev:0,play:0});dd[S.act]++;
+    if(++tc%5===0)save();
+  }
+},1000);
+
+/* ===== 聲音 ===== */
+let enVoices=[],vA=null,vB=null,rate=0.9,spToken=0;
+function loadVoices(){
+  if(!('speechSynthesis' in window))return;
+  const all=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang));
+  const us=all.filter(v=>/en[-_]US/i.test(v.lang));
+  enVoices=us.length?us:all;
+  vA=enVoices[0]||null;
+  vB=enVoices.find(v=>v!==vA)||null;
+}
+if('speechSynthesis' in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices;}
+function say(text,who,done){
+  if(!('speechSynthesis' in window)){done&&done();return;}
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US';u.rate=rate;
+  const v=who==='B'?vB:vA;if(v)u.voice=v;
+  if(!vB||vA===vB){u.pitch=who==='B'?0.8:1.15;}
+  u.onend=()=>done&&done();u.onerror=()=>done&&done();
+  speechSynthesis.speak(u);
+}
+function stopSay(){spToken++;try{speechSynthesis.cancel();}catch(e){}}
+function sayNow(text,who){stopSay();setTimeout(()=>say(plain(text),who||'A'),80);}
+function saySeq(list){
+  stopSay();const t=spToken;let i=0;
+  setTimeout(function next(){
+    if(t!==spToken||i>=list.length)return;
+    const it=list[i++];
+    say(plain(it.t),it.w,()=>{if(t===spToken)setTimeout(next,250);});
+  },100);
+}
+function unlockAudio(){try{const u=new SpeechSynthesisUtterance(' ');u.volume=0;speechSynthesis.speak(u);}catch(e){}}
+function toggleRate(){rate=rate>0.8?0.7:0.9;const b=$('#ratebtn');if(b)b.textContent=rate<0.8?'🐢 慢速:開':'🐢 慢速:關';}
+
+/* ===== 精熟度 ===== */
+const wk=(q,i)=>q+'-'+i;
+function W(q,i){const k=wk(q,i);return S.d.words[k]||(S.d.words[k]={seen:0,lc:0,gc:0,wrong:0});}
+function Dl(q){return S.d.dl[q]||(S.d.dl[q]={seen:0,ok:0,gc:0,wrong:0});}
+function wordLevel(q,i){
+  const w=S.d.words[wk(q,i)];if(!w||!w.seen)return 0;
+  const isAns=V.find(x=>x.q===q).ans===i;
+  if(isAns){return (w.lc>0&&w.gc>0)?3:((w.lc>0||w.gc>0)?2:1);}
+  return w.lc>=2?3:(w.lc>=1?2:1);
+}
+function dlLevel(q){const d=S.d.dl[q];if(!d||!d.seen)return 0;return d.gc>0?3:(d.ok>0?2:1);}
+function mastery(){let s=0;V.forEach(x=>x.opts.forEach((o,i)=>s+=wordLevel(x.q,i)));D.forEach(x=>s+=dlLevel(x.q));return Math.round(s/150*100);}
+const TITLES=[[0,'小電珠 💡'],[20,'電阻 〰️'],[40,'電容 🔋'],[60,'變壓器 🔌'],[80,'電力大師 ⚡']];
+function title(){const m=mastery();let t=TITLES[0][1];TITLES.forEach(x=>{if(m>=x[0])t=x[1];});return t;}
+const vDone=()=>V.every(x=>S.d.rev.v[x.q]);
+const dDone=()=>D.every(x=>S.d.rev.d[x.q]);
+const vSetDone=a=>V.slice(a,a+5).every(x=>S.d.rev.v[x.q]);
+function dayTotals(){
+  let all=0;Object.values(S.d.days).forEach(x=>all+=x.rev+x.play);
+  const t=S.d.days[today()]||{rev:0,play:0};
+  let streak=0;const d=new Date();
+  const key=dd=>dd.getFullYear()+'-'+pad(dd.getMonth()+1)+'-'+pad(dd.getDate());
+  let first=true;
+  for(let i=0;i<400;i++){
+    const x=S.d.days[key(d)];
+    if(x&&x.rev+x.play>0)streak++;else if(!first)break;
+    first=false;d.setDate(d.getDate()-1);
+  }
+  return {today:t.rev+t.play,all,streak};
+}
+
+/* ===== 登記畫面 ===== */
+function inApp(){return /Line\/|FBAN|FBAV|Instagram|MicroMessenger/i.test(navigator.userAgent);}
+function screenReg(){
+  S.act='idle';stopSay();
+  const last=JSON.parse(lsGet('e115last')||'{}');
+  const classes=JSON.parse(lsGet('e115classes')||'[]');
+  render(`
+  <div class="title"><span class="bolt">⚡</span> 統測充電站</div>
+  <div class="sub">115 年統測英文 第一大題(字彙)+ 第二大題(對話)</div>
+  ${inApp()?'<div class="warn">⚠️ 你正在用 Line / 社群軟體內建的瀏覽器,可能沒有聲音、也存不了進度。請改用 <b>Safari</b> 或 <b>Chrome</b> 開啟。</div>':''}
+  ${lsGet('e115probe')===null&&!(lsSet('e115probe','1'),lsGet('e115probe'))?'<div class="warn">⚠️ 這個瀏覽器無法儲存進度(可能是無痕模式)。</div>':''}
+  <div class="card">
+    <label>班級</label><input id="rc" list="cl" placeholder="例:電子二甲" value="${esc(last.cls||'')}">
+    <datalist id="cl">${classes.map(c=>`<option value="${esc(c)}">`).join('')}</datalist>
+    <label>座號</label><input id="rs" type="number" inputmode="numeric" min="1" max="99" placeholder="例:5" value="${esc(last.seat||'')}">
+    <label>姓名</label><input id="rn" placeholder="例:王小明" value="${esc(last.name||'')}">
+    <div class="warn" id="regerr" style="display:none"></div>
+    <button class="btn block" style="margin-top:16px" onclick="doReg()">⚡ 開始充電</button>
+    <div style="font-size:14px;color:#64748b;margin-top:10px">請戴上耳機。進度只存在這支手機裡,換手機或清除瀏覽器資料就會消失。</div>
+  </div>`);
+}
+function doReg(){
+  const cls=$('#rc').value.trim(),seat=$('#rs').value.trim(),name=$('#rn').value.trim();
+  const err=$('#regerr');
+  if(!cls||!seat||!name){err.style.display='block';err.textContent='請把班級、座號、姓名都填好喔!';return;}
+  S.p={cls,seat,name};unlockAudio();
+  lsSet('e115last',JSON.stringify(S.p));
+  const cl=JSON.parse(lsGet('e115classes')||'[]');if(!cl.includes(cls)){cl.push(cls);lsSet('e115classes',JSON.stringify(cl));}
+  let d=null;try{d=JSON.parse(lsGet(pkey()));}catch(e){}
+  S.d=Object.assign(newData(),d||{});S.d.rev=Object.assign({v:{},d:{}},S.d.rev);S.d.set=Object.assign({limit:30},S.d.set);
+  S.sess={score:0,rev:0,play:0,v:0,dl:0};S.unlock=true;
+  save();screenHome();
+}
+
+/* ===== 首頁 ===== */
+let logoTap=0;
+function screenHome(){
+  S.act='idle';stopSay();save();
+  const t=dayTotals();
+  render(`
+  <div class="hello"><div>嗨,<b>${esc(S.p.name)}</b>(${esc(S.p.cls)} ${esc(S.p.seat)}號)</div><button class="ghost" onclick="screenReg()">換人</button></div>
+  <div class="title"><span class="bolt">⚡</span> 統測充電站</div>
+  <div class="sub">稱號:<span class="badge">${title()}</span> 　精熟度 ${mastery()}%</div>
+  <div class="stat">
+    <div>今天練習<b>${Math.round(t.today/60)}</b>分鐘</div>
+    <div>累計練習<b>${Math.round(t.all/60)}</b>分鐘</div>
+    <div>連續天數<b>${t.streak}</b>天</div>
+  </div>
+  <div class="menu">
+    <button onclick="screenVMenu()"><span class="ic">📘</span><span>字彙區<small>第一大題・40 個字(含誘答選項)</small></span></button>
+    <button onclick="screenDMenu()"><span class="ic">💬</span><span>對話區<small>第二大題・10 題對話</small></span></button>
+    <button onclick="screenReport()"><span class="ic">📊</span><span>我的成績單<small>練習完按這裡,截圖給老師</small></span></button>
+    <button onclick="screenSet()"><span class="ic">⚙️</span><span>設定<small>倒數秒數、語速</small></span></button>
+  </div>`);
+}
+function screenSet(){
+  const L=S.d.set.limit;
+  render(`<div class="title">⚙️ 設定</div>
+  <div class="card"><b>每題倒數時間</b>
+    <div class="row" style="margin-top:10px">
+      ${[[45,'悠閒 45 秒'],[30,'標準 30 秒'],[20,'挑戰 20 秒']].map(([v,t])=>`<button class="${L===v?'btn':''}" onclick="S.d.set.limit=${v};save();screenSet()">${t}</button>`).join('')}
+    </div>
+    <div style="margin-top:14px"><b>語速</b></div>
+    <button id="ratebtn" style="margin-top:8px" onclick="toggleRate()">${rate<0.8?'🐢 慢速:開':'🐢 慢速:關'}</button>
+    <div style="margin-top:14px"><b>聲音測試</b></div>
+    <button style="margin-top:8px" onclick="sayNow('Hello! Let us charge up your English.')">🔊 點我試聽</button>
+    <div class="gate" style="color:#64748b">沒聽到聲音?先確認手機沒有靜音、音量有開。</div>
+    <button style="margin-top:14px;background:#fee2e2" onclick="if(confirm('確定要清除自己的練習紀錄嗎?')){S.d=newData();save();screenHome();}">🗑 清除我的紀錄</button>
+  </div>
+  <button class="btn block" onclick="screenHome()">回首頁</button>`);
+}
+
+/* ===== 字彙區選單 ===== */
+function lockBtn(ok,cls,fn,ic,t,s){
+  return `<button class="${ok?'':'lock'}" onclick="${ok?fn:'lockMsg()'}"><span class="ic">${ok?ic:'🔒'}</span><span>${t}<small>${s}</small></span></button>`;
+}
+function lockMsg(){toast('先把複習卡看完,就會解鎖!');}
+function screenVMenu(){
+  S.act='idle';stopSay();
+  const u=S.unlock,all=vDone()||u,a=vSetDone(0)||u,b=vSetDone(5)||u;
+  const n=V.filter(x=>S.d.rev.v[x.q]).length;
+  render(`<div class="hello"><button class="ghost" onclick="screenHome()">‹ 首頁</button><span>字彙區</span></div>
+  <div class="title">📘 40 個字充電</div><div class="sub">複習卡進度 ${n}/10 張</div>
+  <div class="menu">
+   <button onclick="startReview('v',${Math.min(n,9)})"><span class="ic">🃏</span><span>① 複習卡<small>先把 10 題的字、語塊、誘答選項看懂(每 5 題有小測)</small></span></button>
+   ${lockBtn(a||b,'','screenChunkPick()','🎧','② 聽語塊選字','聽語塊、選出缺的字(只聽不看)')}
+   ${lockBtn(a||b,'','startWordQuiz()','👂','③ 聽音選中文','聽單字、選中文(40 字都會出現)')}
+   ${lockBtn(all,'','startVGame()','🔋','④ 原題闖關','原卷第 1–10 題,倒數計時、拿分數')}
+  </div>`);
+}
+function screenChunkPick(){
+  const u=S.unlock,a=vSetDone(0)||u,b=vSetDone(5)||u,all=vDone()||u;
+  render(`<div class="hello"><button class="ghost" onclick="screenVMenu()">‹ 返回</button><span>聽語塊選字</span></div>
+  <div class="title">🎧 選範圍</div><div class="menu">
+  ${lockBtn(a,'','startChunkQuiz(0,5)','1️⃣','第 1–5 題','複習完第一組就能玩')}
+  ${lockBtn(b,'','startChunkQuiz(5,10)','2️⃣','第 6–10 題','複習完第二組就能玩')}
+  ${lockBtn(all,'','startChunkQuiz(0,10)','🔟','全部 10 題','兩組都複習完才能玩')}
+  </div>`);
+}
+
+/* ===== 字彙複習卡 ===== */
+let R={};
+function fillSent(s,ans){return s.replace(/___/g,ans?`<b class="fill">${esc(ans)}</b>`:'<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;</span>');}
+function startReview(kind,i){R={kind,i:i||0,heard:false,flip:{},bub:{}};S.act='rev';kind==='v'?renderRV():renderRD();}
+function gateV(){
+  const q=V[R.i];const need=[];
+  if(!R.heard)need.push('🔊 聽一次語塊');
+  const left=q.opts.map((o,i)=>i).filter(i=>i!==q.ans&&!R.flip[i]).length;
+  if(left)need.push(`點開 ${left} 個誘答字`);
+  const el=$('#gate'),nx=$('#nextbtn');
+  if(el)el.textContent=need.length?'還差:'+need.join('、'):'✅ 都完成了,可以下一張!';
+  if(nx)nx.disabled=need.length>0;
+}
+function renderRV(){
+  const q=V[R.i],A=q.opts[q.ans];
+  render(`<div class="qhead"><button class="ghost" onclick="screenVMenu()">‹ 選單</button><span>複習卡 ${R.i+1}/10(第 ${q.q} 題)</span><span></span></div>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <div>
+        ${q.syn?`<div class="pos">原句底線字 <b>${esc(q.syn)}</b> 的同義字 ↓</div>`:''}
+        <div class="big">${esc(A.w)}</div>
+        <div class="pos">${A.pos}　${A.zh}</div>
+      </div>
+      <button class="spk" onclick="sayNow('${A.w}')">🔊</button>
+    </div>
+    <div class="qbox" style="margin-top:12px;font-size:18px;padding:12px">${fillSent(q.en,A.w)}<div style="font-size:15px;color:#475569">${q.zh}</div></div>
+    <div class="chunk"><span>${esc(q.chunkAns)}<br><small style="font-weight:500">${q.chunkZh}</small></span><button class="spk" onclick="R.heard=true;sayNow('${q.chunkAns.replace(/'/g,"\\'")}');gateV()">🔊</button></div>
+    <div class="chips">線索:${q.clue.split(' / ').map(x=>`<span>${esc(x)}</span>`).join('')}</div>
+    <div class="hook">💡 <b>記憶小撇步</b><br>${q.hook}</div>
+    <b>其他 3 個選項為什麼不行?(點開看)</b>
+    ${q.opts.map((o,i)=>i===q.ans?'':`<button class="flip" id="fl${i}" onclick="flipOpt(${i})"><span class="w">${o.w}</span> <span class="pos">?</span></button>`).join('')}
+  </div>
+  <div class="gate" id="gate"></div>
+  <div class="row"><button ${R.i===0?'disabled':''} onclick="R.i--;R.heard=false;R.flip={};renderRV()">‹ 上一張</button><button class="btn" id="nextbtn" onclick="nextV()">下一張 ›</button></div>`);
+  gateV();
+}
+function flipOpt(i){
+  const q=V[R.i],o=q.opts[i];R.flip[i]=true;
+  const el=$('#fl'+i);el.classList.add('open');
+  el.innerHTML=`<span class="w">${o.w}</span> <span class="pos">${o.pos} ${o.zh}</span><br><span style="font-size:16px">${o.why}</span>`;
+  sayNow(o.w);gateV();
+}
+function nextV(){
+  const q=V[R.i];
+  q.opts.forEach((o,i)=>{W(q.q,i).seen=1;});S.d.rev.v[q.q]=true;save();
+  if(R.i===4)return screenSetDone(0);
+  if(R.i===9)return screenSetDone(5);
+  R.i++;R.heard=false;R.flip={};renderRV();
+}
+function screenSetDone(a){
+  S.act='idle';const last=a===5;
+  render(`<div class="title">🎉 ${last?'複習卡全部看完!':'第一組複習完成!'}</div>
+  <div class="sub">${last?'④ 原題闖關隨時可以玩囉!':'要不要馬上小測?趁熱記得最清楚'}</div>
+  <div class="card sum">
+    <div style="font-size:60px">🔋</div>
+    <div style="margin-bottom:12px">${last?'現在可以去闖關了,先小測第 6–10 題也很棒。':'先聽語塊小測,答對會點亮精熟度。'}</div>
+    <button class="btn block" onclick="startChunkQuiz(${a},${a+5},true)">🎧 馬上小測(5 題)</button>
+    ${last?'<button class="btn cyan block" style="margin-top:10px" onclick="startVGame()">🔋 直接闖關</button>':'<button class="block" style="margin-top:10px" onclick="startReview(\'v\','+(a+5)+')">繼續複習下一組 ›</button>'}
+    <button class="block" style="margin-top:10px" onclick="screenVMenu()">回字彙區</button>
+  </div>`);
+}
+
+/* ===== 測驗引擎(共用) ===== */
+let Q=null;
+const OKS=['電力十足!','接通了!','滿格訊號!','手感來了!','電流超順!','穩穩的!'];
+const COMBO={3:'🔌 充電中!3 連擊','5':'⚡ 電流增強!5 連擊','8':'🔋 快滿電了!8 連擊','10':'🌟 滿電爆發!10 連擊'};
+const NOS=['訊號不穩,再接再厲!','差一點點,看看為什麼 👇','電壓不足,下一題補回來!'];
+function startQuiz(cfg){
+  Q={cfg,i:0,score:0,streak:0,maxStreak:0,ok:0,hint:false,locked:false,limit:cfg.limit||S.d.set.limit,timer:null};
+  S.act='play';showQ();
+}
+function showQ(){
+  const it=Q.cfg.items[Q.i];Q.hint=false;Q.locked=false;
+  render(`<div class="qhead"><button class="ghost" onclick="quitQuiz()">✕ 離開</button><span>${Q.cfg.name} ${Q.i+1}/${Q.cfg.items.length}</span><span class="score">⚡ ${Q.score}</span></div>
+  <div class="streak" id="stk">${Q.streak>=2?'🔌 充電中 '+Q.streak+' 連擊':''}</div>
+  <div class="battery"><i id="bar"></i></div>
+  <div class="qbox">${it.prompt}</div>
+  <div class="tools">
+    <button onclick="replay()">🔊 再聽一次</button>
+    ${it.hintLabel?`<button id="hintbtn" onclick="useHint()">💡 ${it.hintLabel}(-30 分)</button>`:''}
+    <button id="ratebtn" onclick="toggleRate()">${rate<0.8?'🐢 慢速:開':'🐢 慢速:關'}</button>
+  </div>
+  <div id="hintbox"></div>
+  <div class="opts" id="opts">${it.opts.map((o,i)=>`<button class="opt" id="o${i}" onclick="answer(${i})"><span class="L">${'ABCD'[i]}</span><span>${o}</span></button>`).join('')}</div>
+  <div id="fb"></div>`);
+  if(it.autoplay)setTimeout(replay,300);
+  const lim=Q.limit+(it.extra||0);
+  Q.t0=performance.now();Q.lim=lim;
+  Q.timer=setInterval(tick,100);timers.push(Q.timer);
+}
+function tick(){
+  const left=Q.lim-(performance.now()-Q.t0)/1000;
+  const r=Math.max(0,left/Q.lim);const b=$('#bar');
+  if(b){b.style.width=(r*100)+'%';b.className=r<0.2?'low':(r<0.5?'mid':'');}
+  if(left<=0)answer(-1);
+}
+function replay(){if(S.act!=='play'||!Q||!Q.cfg.items[Q.i])return;const it=Q.cfg.items[Q.i];it.speak&&it.speak();}
+function useHint(){
+  if(Q.hint||Q.locked)return;Q.hint=true;
+  const it=Q.cfg.items[Q.i];
+  $('#hintbox').innerHTML='<div class="hintbox">'+it.hintHtml+'</div>';
+  const b=$('#hintbtn');if(b)b.disabled=true;
+  const bl=document.querySelectorAll('.bub.blur');bl.forEach(x=>x.classList.remove('blur'));
+}
+function answer(k){
+  if(Q.locked)return;Q.locked=true;clearInterval(Q.timer);
+  const it=Q.cfg.items[Q.i];const correct=k===it.ans;
+  const left=Math.max(0,Q.lim-(performance.now()-Q.t0)/1000);
+  let gain=0,parts=[];
+  if(correct){
+    Q.streak++;Q.maxStreak=Math.max(Q.maxStreak,Q.streak);Q.ok++;
+    const base=Q.cfg.base||100;
+    gain=Q.hint?Math.max(40,base-30):base;
+    const sp=Math.round(Math.max(0,(left/Q.lim-0.5)/0.5)*(base*0.3));
+    const st=Math.min(Q.streak-1,5)*10;
+    gain+=sp+st;parts=[`答對 +${Q.hint?Math.max(40,base-30):base}`];
+    if(sp)parts.push(`速度 +${sp}`);if(st)parts.push(`連擊 +${st}`);
+    if(Q.hint)parts.push('(有看提示,少 30)');
+    Q.score+=gain;
+  }else{Q.streak=0;}
+  it.onResult&&it.onResult(correct,Q.hint);
+  const bo=$('#o'+it.ans);if(bo)bo.classList.add('ok');
+  if(k>=0&&!correct)$('#o'+k).classList.add('no');
+  document.querySelectorAll('.opt').forEach(b=>b.disabled=true);
+  const hb=$('#hintbtn');if(hb)hb.disabled=true;
+  document.querySelectorAll('.bub.blur').forEach(x=>x.classList.remove('blur'));
+  let head,cls;
+  if(correct){head=COMBO[Q.streak]||pick(OKS);cls='good';}
+  else if(k<0){head='時間到,電池沒電了,記住答案!';cls='bad';}
+  else{head=pick(NOS);cls='bad';}
+  $('#fb').innerHTML=`<div class="fb"><div class="head ${cls}">${head}</div>
+    ${correct?`<div style="color:#475569;font-size:15px">${parts.join(' ・ ')} = +${gain}</div>`:''}
+    ${it.explain(correct)}</div>
+    <button class="btn block" onclick="nextQ()">${Q.i+1>=Q.cfg.items.length?'看成績 ›':'下一題 ›'}</button>`;
+  const stk=$('#stk');if(stk)stk.textContent=Q.streak>=2?'🔌 充電中 '+Q.streak+' 連擊':'';
+  document.querySelector('.score').textContent='⚡ '+Q.score;
+  it.after&&setTimeout(it.after,350);
+  $('#fb').scrollIntoView({behavior:'smooth',block:'nearest'});
+  save();
+}
+function nextQ(){stopSay();Q.i++;if(Q.i>=Q.cfg.items.length)return endQuiz();showQ();}
+function quitQuiz(){if(confirm('要離開嗎?這一回的分數不會計入。')){stopSay();clearTimers();S.act='idle';Q.cfg.back();}}
+function endQuiz(){
+  S.act='idle';stopSay();
+  const n=Q.cfg.items.length,acc=Q.ok/n;
+  S.d.total.score+=Q.score;S.d.total.rounds++;S.sess.score+=Q.score;
+  S.sess[Q.cfg.area]+=Q.score;save();
+  const msg=acc>=0.9?'全部接通!你是電力大師 ⚡':acc>=0.7?'電力很穩,再練一輪就滿電了 🔋':acc>=0.4?'充電中,持續接上電源就會更強 🔌':'電量剛開始累積,每練一次都會更強 💪';
+  render(`<div class="title">🏁 這一回結束!</div>
+  <div class="card sum">
+    <div>${Q.cfg.name}</div>
+    <div class="num">${Q.score}</div><div>分</div>
+    <div style="margin:10px 0;font-size:20px">答對 <b>${Q.ok}/${n}</b>　最高連擊 <b>${Q.maxStreak}</b></div>
+    <div style="font-weight:800;margin-bottom:14px">${msg}</div>
+    <button class="btn block" onclick="Q.cfg.again()">🔁 再玩一次</button>
+    <button class="btn cyan block" style="margin-top:10px" onclick="screenReport()">📊 看成績單</button>
+    <button class="block" style="margin-top:10px" onclick="Q.cfg.back()">${Q.cfg.backLabel||'回選單'}</button>
+  </div>`);
+}
+
+/* ===== 字彙測驗:② 聽語塊、③ 聽音選中文、④ 原題闖關 ===== */
+function wrapOpts(texts,ansIdx){
+  const idx=shuffle(texts.map((t,i)=>i));
+  return {opts:idx.map(i=>texts[i]),ans:idx.indexOf(ansIdx),map:idx};
+}
+function startChunkQuiz(a,b,fr){
+  const items=shuffle(V.slice(a,b)).map(q=>{
+    const w=wrapOpts(q.opts.map(o=>o.w),q.ans);
+    return {
+      prompt:'<div class="inst">🎧 只聽、不看字:聽到的語塊中,「blank」是缺的字</div><div style="text-align:center"><button class="spk huge" onclick="replay()">🔊</button></div>',
+      opts:w.opts,ans:w.ans,autoplay:true,extra:6,
+      speak:()=>sayNow(q.chunkQ),
+      hintLabel:'看字幕',hintHtml:`${q.chunkQ.replace(/___/g,'<span class="blank">&nbsp;&nbsp;&nbsp;</span>')}<br><span style="color:#475569">${q.chunkZh}</span>`,
+      onResult:(ok)=>{const wd=W(q.q,q.ans);ok?wd.lc++:wd.wrong++;},
+      explain:ok=>`<div>✅ 完整語塊:<b>${q.chunkAns}</b>(${q.chunkZh})</div>${q.syn?`<div style="color:#475569">原句用 <b>${q.syn}</b>,意思和 <b>${q.opts[q.ans].w}</b> 一樣。</div>`:''}`,
+      after:()=>sayNow(q.chunkAns)
+    };
+  });
+  const goOn=fr&&a===0;
+  startQuiz({name:'聽語塊',items,area:'v',base:100,
+    back:goOn?()=>startReview('v',5):screenVMenu,backLabel:goOn?'繼續複習下一組 ›':'回選單',again:()=>startChunkQuiz(a,b,fr)});
+}
+function startWordQuiz(){
+  const pool=[];
+  V.forEach(q=>{if(S.unlock||S.d.rev.v[q.q])q.opts.forEach((o,i)=>pool.push({q,i,lv:wordLevel(q.q,i)+Math.random()}));});
+  pool.sort((x,y)=>x.lv-y.lv);
+  const items=shuffle(pool.slice(0,10)).map(({q,i})=>{
+    const w=wrapOpts(q.opts.map(o=>o.zh),i);const o=q.opts[i];
+    return {
+      prompt:'<div class="inst">👂 聽聽看,這個字是什麼意思?</div><div style="text-align:center"><button class="spk huge" onclick="replay()">🔊</button></div>',
+      opts:w.opts,ans:w.ans,autoplay:true,
+      speak:()=>sayNow(o.w),
+      hintLabel:'看單字',hintHtml:`<b style="font-size:26px">${o.w}</b>`,
+      onResult:(ok)=>{const wd=W(q.q,i);ok?wd.lc++:wd.wrong++;},
+      explain:ok=>`<div>✅ <b>${o.w}</b> ${o.pos} ${o.zh}</div>`,
+      after:()=>sayNow(o.w)
+    };
+  });
+  startQuiz({name:'聽音選中文',items,area:'v',base:60,back:screenVMenu,again:startWordQuiz});
+}
+function startVGame(){
+  const items=V.map(q=>{
+    const A=q.opts[q.ans];
+    return {
+      prompt:`<div class="inst">${q.syn?'選出與底線字意思最接近的答案':'選出最適合的答案,完成句子'}</div>${fillSent(q.en)}`,
+      opts:q.opts.map(o=>o.w),ans:q.ans,
+      speak:()=>sayNow(q.en.replace(/<[^>]+>/g,'')),
+      hintLabel:'看中文',hintHtml:q.zh,
+      onResult:(ok,hint)=>{const wd=W(q.q,q.ans);if(ok){if(!hint)wd.gc++;else wd.lc=wd.lc;}else wd.wrong++;wd.seen=1;},
+      explain:ok=>`<div>✅ 答案:<b>${A.w}</b> ${A.zh}</div><div style="margin:6px 0">${fillSent(q.en,q.syn?null:A.w)}</div>
+        <ul>${q.opts.map((o,i)=>`<li><b>${o.w}</b> ${o.zh}:${o.why}</li>`).join('')}</ul>`,
+      after:()=>sayNow(q.syn?q.en.replace(/<[^>]+>/g,''):q.en.replace('___',A.w))
+    };
+  });
+  startQuiz({name:'原題闖關',items,area:'v',base:100,back:screenVMenu,again:startVGame});
+}
+
+/* ===== 對話區 ===== */
+function screenDMenu(){
+  S.act='idle';stopSay();
+  const n=D.filter(x=>S.d.rev.d[x.q]).length,ok=dDone()||S.unlock;
+  render(`<div class="hello"><button class="ghost" onclick="screenHome()">‹ 首頁</button><span>對話區</span></div>
+  <div class="title">💬 10 題對話</div><div class="sub">複習卡進度 ${n}/10 張</div>
+  <div class="menu">
+   <button onclick="startReview('d',${Math.min(n,9)})"><span class="ic">🃏</span><span>① 對話複習<small>聽對話、找「線索句」、看懂誘答選項</small></span></button>
+   ${lockBtn(ok,'','startDGame(false)','🔋','② 原題闖關','原卷第 11–20 題,倒數計時、拿分數')}
+   ${lockBtn(ok,'','startDGame(true)','🎧','③ 聽對話闖關','文字先模糊,用耳朵聽出答案')}
+  </div>`);
+}
+function bubbles(q,mode,blur){
+  // mode: 'blank' 空格、'ans' 填入答案
+  const first=q.lines[0].s;const A=q.opts[q.ans];
+  return q.lines.map((l,i)=>{
+    const side=l.s===first?'L':'R';
+    const hasB=l.en.includes('___');
+    const en=hasB?(mode==='ans'?l.en.replace(/___/,`<b class="fill">${esc(A.en)}</b>`):l.en.replace(/___/,'<span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>')):esc(l.en);
+    const zh=hasB?l.zh.replace(/___/,A.zh):l.zh;
+    const isClue=mode==='ans'&&i===q.clue;
+    const empty=hasB&&mode!=='ans'&&l.en==='___';
+    return `<div class="bub ${side} ${isClue?'clue':''} ${empty?'empty':''} ${blur&&!empty?'blur':''}" data-i="${i}" onclick="tapBub(${i})"><span class="who">${esc(l.s)}${isClue?' 👈 線索句':''}</span><span class="t">${en}</span><div class="zh">${zh}</div></div>`;
+  }).join('');
+}
+function dSeq(q,mode){
+  const first=q.lines[0].s;const A=q.opts[q.ans];
+  return q.lines.map(l=>({t:l.en.includes('___')?l.en.replace(/___/,mode==='ans'?A.en:' blank '):l.en,w:l.s===first?'A':'B'}));
+}
+function tapBub(i){
+  const el=document.querySelector('.bub[data-i="'+i+'"]');if(!el)return;
+  if(el.classList.contains('blur'))return;
+  el.classList.toggle('show');
+  let q=null;
+  if(S.act==='rev'&&R.kind==='d')q=D[R.i];
+  else if(S.act==='play'&&Q&&Q.dq&&Q.locked)q=Q.dq;
+  if(!q)return;
+  const first=q.lines[0].s,l=q.lines[i],A=q.opts[q.ans];
+  sayNow(l.en.replace(/___/,A.en),l.s===first?'A':'B');
+}
+function gateD(){
+  const q=D[R.i];const need=[];
+  if(!R.heard)need.push('▶ 聽完整段對話');
+  const left=q.opts.map((o,i)=>i).filter(i=>i!==q.ans&&!R.flip[i]).length;
+  if(left)need.push(`點開 ${left} 個誘答選項`);
+  const el=$('#gate'),nx=$('#nextbtn');
+  if(el)el.textContent=need.length?'還差:'+need.join('、'):'✅ 都完成了,可以下一張!';
+  if(nx)nx.disabled=need.length>0;
+}
+function renderRD(){
+  const q=D[R.i],A=q.opts[q.ans];
+  render(`<div class="qhead"><button class="ghost" onclick="screenDMenu()">‹ 選單</button><span>對話複習 ${R.i+1}/10(第 ${q.q} 題)</span><span></span></div>
+  <div class="card">
+    <button class="btn cyan block" onclick="R.heard=true;saySeq(dSeq(D[${R.i}],'ans'));gateD()">▶ 聽完整段對話</button>
+    <div style="font-size:14px;color:#64748b;margin:6px 0">點對話泡泡可以看中文。黃框是<b>線索句</b>:答案要看它!</div>
+    ${bubbles(q,'ans',false)}
+    <div class="hook">💡 <b>怎麼想?</b><br>${q.explain}</div>
+    <b>其他 3 個選項為什麼不行?(點開看)</b>
+    ${q.opts.map((o,i)=>i===q.ans?'':`<button class="flip" id="fl${i}" onclick="flipDOpt(${i})"><span class="w" style="font-size:19px">${esc(o.en)}</span></button>`).join('')}
+  </div>
+  <div class="gate" id="gate"></div>
+  <div class="row"><button ${R.i===0?'disabled':''} onclick="R.i--;R.heard=false;R.flip={};renderRD()">‹ 上一張</button><button class="btn" id="nextbtn" onclick="nextD()">下一張 ›</button></div>`);
+  gateD();
+}
+function flipDOpt(i){
+  const q=D[R.i],o=q.opts[i];R.flip[i]=true;
+  const el=$('#fl'+i);el.classList.add('open');
+  el.innerHTML=`<span class="w" style="font-size:19px">${esc(o.en)}</span><br><span class="pos">${o.zh}</span><br><span style="font-size:16px">${o.why}</span>`;
+  sayNow(o.en);gateD();
+}
+function nextD(){
+  const q=D[R.i];Dl(q.q).seen=1;S.d.rev.d[q.q]=true;save();
+  if(R.i===9)return screenDDone();
+  R.i++;R.heard=false;R.flip={};renderRD();
+}
+function screenDDone(){
+  S.act='idle';
+  render(`<div class="title">🎉 對話複習全部看完!</div>
+  <div class="card sum"><div style="font-size:60px">💬</div>
+    <div style="margin-bottom:12px">原題闖關隨時可以玩囉!</div>
+    <button class="btn block" onclick="startDGame(false)">🔋 原題闖關</button>
+    <button class="btn cyan block" style="margin-top:10px" onclick="startDGame(true)">🎧 聽對話闖關</button>
+    <button class="block" style="margin-top:10px" onclick="screenDMenu()">回對話區</button></div>`);
+}
+function startDGame(listen){
+  const items=shuffle(D).map(q=>{
+    const A=q.opts[q.ans];
+    const hintZh=q.lines.map(l=>`<div><b>${esc(l.s)}:</b>${l.zh}</div>`).join('')+'<hr>'+q.opts.map((o,i)=>`<div>${'ABCD'[i]}. ${o.zh}</div>`).join('');
+    return {
+      dq:q,
+      prompt:`<div class="inst">${listen?'🎧 先用耳朵聽,文字是模糊的(看提示才會清楚)':'選出最適合的答案,讓對話有意義'}</div>${bubbles(q,'blank',listen)}`,
+      opts:q.opts.map(o=>esc(o.en)),ans:q.ans,autoplay:listen,extra:listen?15:5,
+      speak:()=>saySeq(dSeq(q,'blank')),
+      hintLabel:listen?'看文字和中文':'看中文',hintHtml:hintZh,
+      onResult:(ok,hint)=>{const d=Dl(q.q);d.seen=1;if(ok){d.ok++;if(!hint)d.gc++;}else d.wrong++;},
+      explain:ok=>`<div>✅ 答案:<b>${esc(A.en)}</b>(${A.zh})</div><div style="margin:6px 0">👈 看<b>黃框線索句</b>就知道了。${q.explain}</div>
+        <ul>${q.opts.map((o,i)=>`<li><b>${esc(o.en)}</b>:${o.why}</li>`).join('')}</ul>`,
+      after:()=>{
+        const el=document.querySelector('.qbox');
+        if(el)el.innerHTML='<div class="inst">完整對話(點泡泡看中文)</div>'+bubbles(q,'ans',false);
+        saySeq(dSeq(q,'ans'));
+      }
+    };
+  });
+  startQuiz({name:listen?'聽對話':'對話闖關',items,area:'dl',base:100,back:screenDMenu,again:()=>startDGame(listen)});
+}
+// 讓 tapBub 在測驗中知道目前題目
+const _showQ=showQ;
+showQ=function(){_showQ();const it=Q.cfg.items[Q.i];Q.dq=it.dq||null;};
+
+/* ===== 成績單 ===== */
+function screenReport(){
+  S.act='idle';stopSay();save();
+  const t=dayTotals(),s=S.sess;
+  const chipV=(q,i)=>{const lv=wordLevel(q.q,i);return `<span class="chip lv${lv}">${q.opts[i].w}${i===q.ans?'★':''}</span>`;};
+  const grid=V.map(q=>`<span>Q${q.q}</span>`+q.opts.map((o,i)=>chipV(q,i)).join('')).join('');
+  const dgrid=D.map(q=>`<span class="chip lv${dlLevel(q.q)}">Q${q.q}</span>`).join('');
+  const wr=[];
+  V.forEach(q=>q.opts.forEach((o,i)=>{const w=S.d.words[wk(q.q,i)];if(w&&w.wrong>0)wr.push([o.w,w.wrong]);}));
+  D.forEach(q=>{const d=S.d.dl[q.q];if(d&&d.wrong>0)wr.push(['對話第 '+q.q+' 題',d.wrong]);});
+  wr.sort((a,b)=>b[1]-a[1]);
+  render(`<div class="hello"><button class="ghost" onclick="screenHome()">‹ 首頁</button><span>請用手機截圖 📸</span></div>
+  <div class="rep" style="margin-top:10px">
+    <h2>⚡ 統測充電站 成績單</h2>
+    <table>
+      <tr><td>班級 / 座號</td><td>${esc(S.p.cls)}　${esc(S.p.seat)} 號</td></tr>
+      <tr><td>姓名</td><td>${esc(S.p.name)}</td></tr>
+      <tr><td>截圖時間</td><td>${nowStr()}</td></tr>
+      <tr><td>稱號</td><td>${title()}</td></tr>
+      <tr><td>精熟度</td><td>${mastery()}%</td></tr>
+    </table>
+    <h3 style="margin:12px 0 4px">🎯 分數</h3>
+    <table>
+      <tr><td>本次累計分數</td><td>${s.score} 分</td></tr>
+      <tr><td>　字彙區</td><td>${s.v} 分</td></tr>
+      <tr><td>　對話區</td><td>${s.dl} 分</td></tr>
+      <tr><td>歷史累計(${S.d.total.rounds} 回)</td><td>${S.d.total.score} 分</td></tr>
+    </table>
+    <h3 style="margin:12px 0 4px">⏱ 練習時間</h3>
+    <table>
+      <tr><td>本次・複習</td><td>${fmtT(s.rev)}</td></tr>
+      <tr><td>本次・闖關</td><td>${fmtT(s.play)}</td></tr>
+      <tr><td>本次合計</td><td>${fmtT(s.rev+s.play)}</td></tr>
+      <tr><td>今天累計</td><td>${fmtT(t.today)}</td></tr>
+      <tr><td>全部累計</td><td>${fmtT(t.all)}</td></tr>
+      <tr><td>連續練習</td><td>${t.streak} 天</td></tr>
+    </table>
+    <h3 style="margin:12px 0 4px">📘 字彙 40 字(★ 為答案字)</h3>
+    <div class="leg"><span class="lv0">未學</span><span class="lv1">看過</span><span class="lv2">會聽</span><span class="lv3">精通</span></div>
+    <div class="grid">${grid}</div>
+    <h3 style="margin:12px 0 4px">💬 對話 10 題</h3>
+    <div class="grid d">${dgrid}</div>
+    ${wr.length?`<h3 style="margin:12px 0 4px">🔧 最需要加強</h3><div>${wr.slice(0,3).map(x=>`${esc(x[0])}(錯 ${x[1]} 次)`).join('、')}</div>`:''}
+  </div>
+  <button class="btn block" style="margin-top:12px" onclick="screenHome()">回首頁</button>`);
+}
+
+/* ===== 啟動 ===== */
+screenReg();
+</script>
+</body></html>
